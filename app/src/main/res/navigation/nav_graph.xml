@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.techdoctorbd.foodrecipe.RecipesFragment"
+        android:name="com.techdoctorbd.foodrecipe.ui.fragments.RecipesFragment"
         android:label="@string/recipes"
         tools:layout="@layout/fragment_recipes" />
 
     <fragment
         android:id="@+id/favoriteRecipesFragment"
-        android:name="com.techdoctorbd.foodrecipe.FavoriteRecipesFragment"
+        android:name="com.techdoctorbd.foodrecipe.ui.fragments.FavoriteRecipesFragment"
         android:label="@string/favorite_recipes"
         tools:layout="@layout/fragment_favorite_recipes" />
 
     <fragment
         android:id="@+id/foodJokeFragment"
-        android:name="com.techdoctorbd.foodrecipe.FoodJokeFragment"
+        android:name="com.techdoctorbd.foodrecipe.ui.fragments.FoodJokeFragment"
         android:label="@string/food_joke"
         tools:layout="@layout/fragment_food_joke" />
 
