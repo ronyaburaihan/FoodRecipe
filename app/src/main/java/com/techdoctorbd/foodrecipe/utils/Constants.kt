@@ -1,7 +1,5 @@
 package com.techdoctorbd.foodrecipe.utils
 
-import retrofit2.http.QueryMap
-
 object Constants {
 
     const val BASE_URL = "https://api.spoonacular.com"
@@ -14,5 +12,9 @@ object Constants {
     const val QUERY_DIET = "diet"
     const val QUERY_ADD_RECIPE_INFORMATION = "addRecipeInformation"
     const val QUERY_FILL_INGREDIENTS = "fillIngredients"
+
+    //For ROOM Database
+    const val DATABASE_NAME = "recipes_database"
+    const val RECIPES_TABLE = "recipes_table"
 
 }
