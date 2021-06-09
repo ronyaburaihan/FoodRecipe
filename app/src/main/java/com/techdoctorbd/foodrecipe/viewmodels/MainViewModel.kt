@@ -8,7 +8,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.techdoctorbd.foodrecipe.data.Repository
 import com.techdoctorbd.foodrecipe.data.database.RecipesEntity
-import com.techdoctorbd.foodrecipe.models.FoodRecipe
+import com.techdoctorbd.foodrecipe.data.models.FoodRecipe
 import com.techdoctorbd.foodrecipe.utils.NetworkResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

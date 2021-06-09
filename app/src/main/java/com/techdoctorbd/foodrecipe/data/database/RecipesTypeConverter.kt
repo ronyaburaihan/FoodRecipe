@@ -3,7 +3,7 @@ package com.techdoctorbd.foodrecipe.data.database
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.techdoctorbd.foodrecipe.models.FoodRecipe
+import com.techdoctorbd.foodrecipe.data.models.FoodRecipe
 
 class RecipesTypeConverter {
     var gson = Gson()

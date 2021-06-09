@@ -1,7 +1,7 @@
 package com.techdoctorbd.foodrecipe.utils
 
 import androidx.recyclerview.widget.DiffUtil
-import com.techdoctorbd.foodrecipe.models.Result
+import com.techdoctorbd.foodrecipe.data.models.Result
 
 class RecipesDiffUtils(
         val newList: List<Result>,

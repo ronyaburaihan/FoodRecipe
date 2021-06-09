@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.techdoctorbd.foodrecipe.databinding.LayoutRecipeItemBinding
-import com.techdoctorbd.foodrecipe.models.FoodRecipe
-import com.techdoctorbd.foodrecipe.models.Result
+import com.techdoctorbd.foodrecipe.data.models.FoodRecipe
+import com.techdoctorbd.foodrecipe.data.models.Result
 import com.techdoctorbd.foodrecipe.utils.RecipesDiffUtils
 
 class FoodRecipesAdapter : RecyclerView.Adapter<FoodRecipesAdapter.RecipesViewHolder>() {

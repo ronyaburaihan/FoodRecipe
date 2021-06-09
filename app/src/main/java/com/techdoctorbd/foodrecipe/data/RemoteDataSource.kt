@@ -1,7 +1,7 @@
 package com.techdoctorbd.foodrecipe.data
 
 import com.techdoctorbd.foodrecipe.data.network.FoodRecipeApi
-import com.techdoctorbd.foodrecipe.models.FoodRecipe
+import com.techdoctorbd.foodrecipe.data.models.FoodRecipe
 import retrofit2.Response
 import javax.inject.Inject
 

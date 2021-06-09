@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="result"
-            type="com.techdoctorbd.foodrecipe.models.Result" />
+            type="com.techdoctorbd.foodrecipe.data.models.Result" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

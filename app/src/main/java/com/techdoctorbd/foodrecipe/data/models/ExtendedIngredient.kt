@@ -1,4 +1,4 @@
-package com.techdoctorbd.foodrecipe.models
+package com.techdoctorbd.foodrecipe.data.models
 
 import com.google.gson.annotations.SerializedName
 

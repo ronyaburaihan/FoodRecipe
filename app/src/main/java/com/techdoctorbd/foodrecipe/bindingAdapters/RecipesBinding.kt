@@ -3,7 +3,7 @@ package com.techdoctorbd.foodrecipe.bindingAdapters
 import android.view.View
 import androidx.databinding.BindingAdapter
 import com.techdoctorbd.foodrecipe.data.database.RecipesEntity
-import com.techdoctorbd.foodrecipe.models.FoodRecipe
+import com.techdoctorbd.foodrecipe.data.models.FoodRecipe
 import com.techdoctorbd.foodrecipe.utils.NetworkResult
 
 class RecipesBinding {
