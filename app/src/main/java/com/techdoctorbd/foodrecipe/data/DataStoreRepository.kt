@@ -7,6 +7,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.techdoctorbd.foodrecipe.data.models.MealAndDietType
 import com.techdoctorbd.foodrecipe.utils.Constants.DEFAULT_DIET_TYPE
 import com.techdoctorbd.foodrecipe.utils.Constants.DEFAULT_MEAL_TYPE
+import com.techdoctorbd.foodrecipe.utils.Constants.PREFERENCE_BACK_ONLINE
 import com.techdoctorbd.foodrecipe.utils.Constants.PREFERENCE_DIET_TYPE
 import com.techdoctorbd.foodrecipe.utils.Constants.PREFERENCE_DIET_TYPE_ID
 import com.techdoctorbd.foodrecipe.utils.Constants.PREFERENCE_MEAL_TYPE
@@ -28,10 +29,17 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
         val selectedMealTypeId = intPreferencesKey(PREFERENCE_MEAL_TYPE_ID)
         val selectedDietType = stringPreferencesKey(PREFERENCE_DIET_TYPE)
         val selectedDietTypeId = intPreferencesKey(PREFERENCE_DIET_TYPE_ID)
+        val backOnline = booleanPreferencesKey(PREFERENCE_BACK_ONLINE)
     }
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = PREFERENCE_NAME)
     private val dataStore = context.dataStore
+
+    suspend fun saveBackOnline(backOnline: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[PreferenceKeys.backOnline] = backOnline
+        }
+    }
 
     suspend fun saveMealAndDietType(
         mealType: String,
@@ -63,5 +71,18 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
             val dietTypeId = preference[PreferenceKeys.selectedDietTypeId] ?: 0
 
             MealAndDietType(mealType, mealTypeId, dietType, dietTypeId)
+        }
+
+    val readBackOnline: Flow<Boolean> = dataStore.data
+        .catch { exception ->
+            if (exception is IOException) {
+                emit(emptyPreferences())
+            } else {
+                throw exception
+            }
+        }
+        .map { preference ->
+            val backOnline = preference[PreferenceKeys.backOnline] ?: false
+            backOnline
         }
 }
