@@ -16,6 +16,7 @@ import com.techdoctorbd.foodrecipe.utils.Constants.QUERY_API_KEY
 import com.techdoctorbd.foodrecipe.utils.Constants.QUERY_DIET
 import com.techdoctorbd.foodrecipe.utils.Constants.QUERY_FILL_INGREDIENTS
 import com.techdoctorbd.foodrecipe.utils.Constants.QUERY_NUMBER
+import com.techdoctorbd.foodrecipe.utils.Constants.QUERY_SEARCH
 import com.techdoctorbd.foodrecipe.utils.Constants.QUERY_TYPES
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -35,7 +36,7 @@ class RecipesViewModel @ViewModelInject constructor(
     val readMealAndDietType = dataStoreRepository.readMealAndDietType
     val readBackOnline = dataStoreRepository.readBackOnline.asLiveData()
 
-    fun saveBackOnline(backOnline: Boolean) {
+    private fun saveBackOnline(backOnline: Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
             dataStoreRepository.saveBackOnline(backOnline)
         }
@@ -64,6 +65,16 @@ class RecipesViewModel @ViewModelInject constructor(
         queries[QUERY_API_KEY] = API_KEY
         queries[QUERY_TYPES] = mealType
         queries[QUERY_DIET] = dietType
+        queries[QUERY_ADD_RECIPE_INFORMATION] = "true"
+        queries[QUERY_FILL_INGREDIENTS] = "true"
+
+        return queries
+    }
+
+    fun applySearchQuery(searchQuery: String): HashMap<String, String> {
+        val queries: HashMap<String, String> = HashMap()
+        queries[QUERY_SEARCH] = searchQuery
+        queries[QUERY_API_KEY] = API_KEY
         queries[QUERY_ADD_RECIPE_INFORMATION] = "true"
         queries[QUERY_FILL_INGREDIENTS] = "true"
 
