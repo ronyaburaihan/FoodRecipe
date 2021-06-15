@@ -1,16 +1,36 @@
 package com.techdoctorbd.foodrecipe.bindingAdapters
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import androidx.navigation.findNavController
 import coil.load
 import com.techdoctorbd.foodrecipe.R
+import com.techdoctorbd.foodrecipe.data.models.Result
+import com.techdoctorbd.foodrecipe.ui.fragments.RecipesFragmentDirections
 
 class RecipesItemBinding {
 
     companion object {
+
+        @JvmStatic
+        @BindingAdapter("onRecipeItemClickListener")
+        fun onRecipeItemClickListener(recipeItemLayout: ConstraintLayout, result: Result) {
+            Log.d("onRecipeClickListener", "Recipe Item Clicked")
+            recipeItemLayout.setOnClickListener {
+                try {
+                    val action =
+                        RecipesFragmentDirections.actionRecipesFragmentToDetailsActivity(result)
+                    recipeItemLayout.findNavController().navigate(action)
+                } catch (e: Exception) {
+                    Log.d("onRecipeClickListener", e.toString())
+                }
+            }
+        }
 
         @JvmStatic
         @BindingAdapter("setNumberOfLikes")

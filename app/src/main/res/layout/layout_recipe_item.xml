@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="result"
             type="com.techdoctorbd.foodrecipe.data.models.Result" />
@@ -11,6 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/recipe_item_layout"
+        onRecipeItemClickListener="@{result}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
